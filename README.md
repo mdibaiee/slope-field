@@ -9,7 +9,7 @@ In order to read a mathematical function definition from input, I wrote [mathexp
 
 Get Started
 -----------
-If you don't already, install [Haskell Platform](https://www.haskell.org/platform/).
+If you haven't already, install [Haskell Platform](https://www.haskell.org/platform/).
 
 ```
 git clone https://github.com/mdibaiee/slope-field
