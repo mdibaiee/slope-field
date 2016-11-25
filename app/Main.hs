@@ -7,6 +7,8 @@ module Main where
   import Graphics.Rendering.Chart.Backend.Cairo
   import Control.Lens
   import Data.Default.Class
+  import Data.Colour.SRGB
+  import Data.Colour
 
   main :: IO ()
   main = do
@@ -22,14 +24,18 @@ module Main where
 
     let chart = toRenderable layout
           where
+            color = opaque (sRGB 0.3 0.3 1)
+
             layout = layout_title .~ "slope field"
                    $ layout_plots .~ [vectors]
                    $ def
 
             vectors = plotVectorField
                     $ plot_vectors_values .~ field
-                    $ plot_vectors_scale .~ 0
-                    $ plot_vectors_style . vector_head_style . point_radius .~ 0
+                    $ plot_vectors_scale .~ 1
+                    $ plot_vectors_grid .~ []
+                    $ plot_vectors_style . vector_head_style . point_color .~ color
+                    $ plot_vectors_style . vector_line_style . line_color .~ color
                     $ def
 
     renderableToFile def "slope-field.png" chart

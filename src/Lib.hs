@@ -18,4 +18,9 @@ module Lib
             half = diff / 2
             res = map (\(x, y) -> ((x - half, y), (half, d x y * diff))) pts
             inf = 1/0
-        in filter (\((x0, y0), (x, y)) -> x < inf && y < inf && x > -inf && y > -inf) res
+            noinf = filter (\((x0, y0), (x, y)) -> x < inf && y < inf && x > -inf && y > -inf) res
+            (minx, miny) = head pts
+            (maxx, maxy) = last pts
+            limitX = min maxx . max minx
+            limitY = min maxy . max miny
+        in map (\((x0, y0), (x1, y1)) -> ((limitX x0, limitY y0), (limitX x1, limitY y1))) noinf

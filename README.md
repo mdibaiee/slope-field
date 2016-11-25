@@ -60,7 +60,7 @@ estimation size:
 dy/dx = 
 y/x
 range - format: (lower, upper): 
-(-10, 10)
+(-20, 20)
 estimation size: 
 0.1
 ```
