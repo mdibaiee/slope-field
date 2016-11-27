@@ -1,4 +1,4 @@
-slope-field
+slope-field [![Open Source Society University - Data Science](https://img.shields.io/badge/OSSU-data--science-blue.svg)](https://github.com/open-source-society/data-science)
 ===========
 
 I was studying [this course on Integration](https://www.edx.org/course/calculus-1b-integration-mitx-18-01-2x) when I encountered
